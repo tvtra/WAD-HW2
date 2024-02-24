@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/profile.css">
+    <script src="https://kit.fontawesome.com/8038b883bb.js" crossorigin="anonymous"></script>
+    <title>Profile</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <h2>{{ email }}</h2>
+            <form method="POST" action="/upload-image" enctype="multipart/form-data">
+                <img src="/static/images/{{ filename }}" alt="user" width="220">
+                <input type="file" name="image">
+                <div class="message">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages and 'successful' in messages[0] %}
+                            <p style="color: green">{{ messages[0] }}</p>
+                        {% else  %}
+                            <p style="color: red">{{ messages[0] }}</p>
+                        {% endif %}
+                    {% endwith %}
+                </div>
+                <input type="submit" value="Upload image">
+            </form>
+        </div>
+        <div class="right">
+            <form class="info" method="POST" action="/profile">
+                <label for="firstname">Firstname:</label>
+                <input type="text" name="firstname" value="{{ firstname }}">
+                <label for="lastname">Lastname:</label>
+                <input type="text" name="lastname" value="{{ lastname }}">
+                <input type="submit" value="Update profile">
+            </form>
+            <form method="GET" action="/change-password">
+                <input type="submit" value="Change password">
+            </form>
+            <form method="GET" action="/logout">
+                <input type="submit" value="Log out">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <div class="input-form">
+            <form method="POST" action="/">
+                <label for="email">Email:</label>
+                <input type="email" name="email" placeholder="Enter your email">
+                <label for="password">Password:</label>
+                <input type="password" name="password" placeholder="Enter your password">
+                <div class="message">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages and 'successful' in messages[0] %}
+                            <p style="color: green">{{ messages[0] }}</p>
+                        {% else  %}
+                            <p style="color: red">{{ messages[0] }}</p>
+                        {% endif %}
+                    {% endwith %}
+                </div>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+        <div class="signup-login">
+            <p>Don't have an acount?</p>
+            <a href="/signup">Sign up</a>
+        </div>
+    </div>
+    </body>
+</html>

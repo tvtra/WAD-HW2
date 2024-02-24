@@ -1,0 +1,89 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    margin: 50px auto;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 0px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+.left {
+    padding: 10px;
+    text-align: center;
+    background-color: #cce0ff;
+}
+
+.left h2 {
+    margin-bottom: 20px;
+}
+
+.left img {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.left input[type='file'] {
+    margin-bottom: 20px;
+    width: 220px;
+    text-align: center;
+}
+
+.left .message {
+    margin-bottom: 20px;
+}
+
+.left input[type='submit'] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    background-color: #007bff;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.right {
+    padding: 20px;
+}
+
+.right form {
+    display: flex;
+    flex-direction: column;
+}
+
+.right form label {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.right form input[type='text'] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.right form input[type='submit'] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    background-color: #007bff;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+
